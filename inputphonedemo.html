@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Basic input type</title>
+        <link rel="stylesheet" href="InputFromCSS.css">
+    </head>
+    <body>
+        <from>
+            <header class="headerContainer"><h1>HTML 5 From Input Fildes</h1></header>
+            <div>
+                <label for="text">text  input type for Name:</label>
+                <input type="text" id="text" name="text-input">
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+
+            <div>
+                <label for="pwd">Passoward  input type:</label>
+                <input type="password" id="pwd" name="pwd">
+                <error-output class="pwd-error" for="pwd"></error-output>
+            </div>
+
+            <div>
+                <label for="email">Email  input type :</label>
+                <input type="email" id="email" name="email">
+                <error-output class="email-error" for="email"></error-output>
+            </div>
+
+            <div>
+                <label for="url">url input type:</label>
+                <input type="url" id="url" name="url">
+            </div>
+
+            <div>
+                <label for="number">number  input type:</label>
+                <input type="number" id="number" name="number">
+            </div>
+
+            <div>
+                <label for="tel">tel  input type:</label>
+                <input type="tel" id="tel" name="tel">
+                <error-output class="tel-error" for="tel"></error-output>
+            </div>
+
+            <div>
+                <label for="search">search  input type:</label>
+                <input type="search" id="search" name="search">
+            </div>
+
+            <div>
+                <div class="nativeDataTimePicker"></div>
+                <label for="party">Chose a date input type for Name:</label>
+                <input type="datetime-local" id="party" name="bday">
+            </div>
+
+            <div>
+                <label for="salary">Choose salary:</label>
+                <input type="range" id="salary" min="10000"
+                max="50000" step="100" value="20000">
+                <output class="Salary-output" for="salary">20000</output>
+            </div>
+            <div>
+                <button>Submit</button>
+            </div>
+        </from>
+        <script>
+            const text=document.querySelector('#text');
+            const textError=document.querySelector('.text-error');
+            text.addEventListener('input',function()
+            {
+                let nameRegex=RegExp('^[A-Z]{1}[a-z]{2,}$');
+                if(nameRegex.test(test.value))
+                textError.textContent="";
+                else
+                textError.textContent="Name is Incorrect";
+            });
+            const text1=document.querySelector('#email');
+            const textError1=document.querySelector('.email-error');
+            text1.addEventListener('input',function(){
+                let nameRegx=RegExp('^[a-zA-Z0-9]{3,20}@gmail.com$');
+                if(nameRegx.test(text1.value))
+                textError1.textContent="";
+                else
+                textError1.textContent="email is incorrect";
+            });
+            const text2=document.querySelector('#tel');
+            const textError2=document.querySelector('.tel-error');
+            text2.addEventListener('input',function(){
+                let nameRegx=RegExp('^[1-9]{2}[0-9]{10}$');
+                if(nameRegx.test(text2.value))
+                textError2.textContent="";
+                else
+                textError2.textContent="tel is incorrect";
+            });
+            const text3=document.querySelector('#pwd');
+            const textError3=document.querySelector('.pwd-error');
+            text3.addEventListener('input',function(){
+                let nameRegx=RegExp('^[A-Za-z0-9]{8}$');
+                if(nameRegx.test(text2.value))
+                textError3.textContent="";
+                else
+                textError3.textContent="pwd is incorrect";
+            });
+
+            const alary=document.querySelector('#salary');
+            const output=document.querySelector('.salary-output');
+            output.textContent=salary.value;
+            output.addEventListener('input',function()
+            {
+                output.textContent=salary.value;
+            });
+        </script>
+    </body>
+</html>
